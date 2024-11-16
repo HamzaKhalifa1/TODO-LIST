@@ -2,9 +2,11 @@ class Todo {
     name='empty';
     todo = [];
 
-    constructor(name, todo = []) {
+    constructor(name, newTodo=null) {
         this.name = name;
-        this.todo = todo;
+        if (newTodo){
+            this.addTodo(newTodo);
+        }
     }
 
     addTodo(newTodo) {
@@ -37,7 +39,7 @@ class Todo {
 }
 
 
-let todo1 = new Todo('Hamza');
+let todo1 = new Todo('Hamza','new task');
 todo1.addTodo('create pc');
 todo1.addTodo('Complete homework');
 todo1.print();
